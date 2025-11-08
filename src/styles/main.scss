@@ -1,8 +1,9 @@
 $day-size: 100px;
 $padding-size: 10px;
 $gap-size: 1px;
-$calendar-width: ($total-columns * $day-size) + (($total-columns - 1) * $gap-size) + (2 * $padding-size);
 $total-columns: 7;
+$calendar-width: ($total-columns * $day-size) +
+  (($total-columns - 1) * $gap-size) + (2 * $padding-size);
 $hover-color: #ffbfcb;
 $animation-duration: 0.5s;
 $days: (
@@ -14,7 +15,6 @@ $days: (
   sat: 5,
   sun: 6,
 );
-
 
 @each $day, $offset in $days {
   .calendar--start-day-#{$day} {
@@ -36,6 +36,11 @@ $days: (
 
 body {
   margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .calendar {
